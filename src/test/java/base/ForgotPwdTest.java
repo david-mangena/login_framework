@@ -19,7 +19,7 @@ public class ForgotPwdTest extends BaseTests {
     //DataBase
     @DataProvider()
     public Object[][] LoginData(){
-        Object[][] data = new Object[4][3];
+        Object[][] data = new Object[4][4];
         data[0][0] = "Forgot Password"; data[0][1] = "just@do.it"; data[0][2] = false;
         data[1][0] = "Forgot Password"; data[1][1] = "just@do.it"; data[1][2] = true;
         data[2][0] = "Forgot Password"; data[2][1] = "just@do.it"; data[2][2] = true;
