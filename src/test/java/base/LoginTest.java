@@ -18,22 +18,15 @@ public class LoginTest extends BaseTests{
         loginPage.setPassword(Password);
         SecureAreaPage secureAreaPage = loginPage.clickSubmitBtn();
         Assert.assertTrue(Success,secureAreaPage._getFlashMessage());
-
-
         LoginPage logoutPage = secureAreaPage.clickLogoutBtn();
-
         Assert.assertTrue(Success,logoutPage.getFlashMessage());
-
     }
-
 
     @DataProvider()
     public Object[][] LoginData(){
      Object[][] data = new Object[2][3];
-
      data[0][0] = "Forgot Password"; data[0][1] = "SuperSecretPassword!"; data[0][2] = 1;
      data[1][0] = "tomsmith2"; data[1][1] = "SuperSecretPassword!2"; data[1][2] = "1";
-
      return data;
     }
 }
