@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class SecureAreaPage {
-
     private WebDriver driver;
     private By flash_messages = By.id("flash");
     private By logutBtn = By.cssSelector("#content  div a");
@@ -16,7 +15,6 @@ public class SecureAreaPage {
     public String _getFlashMessage(){
        return driver.findElement(flash_messages).getText();
     }
-
 
     public LoginPage clickLogoutBtn(){
         driver.findElement(logutBtn).click();
