@@ -5,6 +5,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.ForgotPasswordPage;
 
+
 public class ForgotPwdTest extends BaseTests {
 
     @Test(priority = 2, dataProvider = "LoginData")

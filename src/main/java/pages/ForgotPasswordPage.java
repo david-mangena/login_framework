@@ -26,3 +26,4 @@ public class ForgotPasswordPage {
       return  driver.findElement(erroMsg).getText();
     }
 }
+
