@@ -9,6 +9,7 @@ import org.openqa.selenium.io.FileHandler;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import pages.DragAndDropPage;
 import pages.HomePage;
 import java.io.File;
 import java.io.IOException;
@@ -23,12 +24,14 @@ public class BaseTests {
     @BeforeMethod
     public void setup() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
+//        options.addArguments("--headless");
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(BASEURL);
         homePage = new HomePage(driver);
+
+
     }
 
     @AfterMethod
@@ -59,6 +62,6 @@ public class BaseTests {
 
     @AfterMethod()
     public void tearDown() {
-        driver.quit();
+//        driver.quit();
     }
 }

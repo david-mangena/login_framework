@@ -38,5 +38,4 @@ public class LoginPage {
         driver.findElement(submitBtn).click();
         return new SecureAreaPage(driver);
     }
-
 }

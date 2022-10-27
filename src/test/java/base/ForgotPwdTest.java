@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import pages.ForgotPasswordPage;
 
 public class ForgotPwdTest extends BaseTests {
+
     @Test(priority = 2, dataProvider = "LoginData")
     public void forgotPwdTest(String LinkText, String Email, boolean ErrorMessage){
         ForgotPasswordPage forgotPasswordPage = homePage.clickForgotPwd(LinkText);
