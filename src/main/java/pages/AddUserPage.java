@@ -21,26 +21,32 @@ public class AddUserPage {
     }
 
     public void setFirstName(String firstname){
+        driver.findElement(firstNameField).clear();
         driver.findElement(firstNameField).sendKeys(firstname);
     }
 
     public void setLastName(String lastname){
+        driver.findElement(lastNameField).clear();
         driver.findElement(lastNameField).sendKeys(lastname);
     }
 
     public void setUserName(String username){
+        driver.findElement(userNameField).clear();
         driver.findElement(userNameField).sendKeys(username);
     }
 
     public void setCellphone(String cellphone){
+        driver.findElement(cellphoneField).clear();
         driver.findElement(cellphoneField).sendKeys(cellphone);
     }
 
     public void setPassword(String password){
+        driver.findElement(passwordField).clear();
         driver.findElement(passwordField).sendKeys(password);
     }
 
     public void setEmail(String email){
+        driver.findElement(emailField).clear();
         driver.findElement(emailField).sendKeys(email);
     }
 
@@ -54,6 +60,9 @@ public class AddUserPage {
         driver.findElement(radioDropDownList).sendKeys(role);
     }
 
+    public String getTableFirstNameFieldTxt(){
+      return driver.findElement(firstNameField).getText();
+    }
     public HomePage clickOnSaveBtn(){
         driver.findElement(saveBtn).click();
         return new HomePage(driver);

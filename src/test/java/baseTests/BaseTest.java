@@ -7,10 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.HomePage;
 
 import java.io.File;
@@ -22,18 +19,16 @@ public class BaseTest {
     protected HomePage homepage;
     String BASEURL ="http://www.way2automation.com/angularjs-protractor/webtables/";
 
-    @BeforeMethod
+    @BeforeSuite
     public void setup(){
         ChromeOptions options= new ChromeOptions();
-        options.addArguments("--headless");
+//        options.addArguments("--headless");
         System.setProperty("webdriver.chrome.driver","resources/chromedriver.exe");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get(BASEURL);
-
         homepage = new HomePage(driver);
-
     }
 
     @AfterMethod
@@ -63,7 +58,7 @@ public class BaseTest {
         }
     }
 
-    @AfterClass
+    @AfterSuite
     //after class to close our browser
     public void tearDown() {
         //CLOSE THE BROWSER
